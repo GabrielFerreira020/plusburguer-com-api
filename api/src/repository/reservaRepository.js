@@ -27,9 +27,10 @@ export async function alterarReserva(id, reserva){
 
 export async function removerReserva(id){
     const comando =
-        `DELETE FROM TB_RESERVA`;
+   ` DELETE FROM TB_RESERVA
+    WHERE	ID_RESERVA = ?`;
 
-    const [resposta] = await con.query(comando, [reserva]);
+    const [resposta] = await con.query(comando, [id]);
     return resposta.affectedRows;
 }
 

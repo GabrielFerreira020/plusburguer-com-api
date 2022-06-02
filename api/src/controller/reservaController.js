@@ -1,4 +1,4 @@
-import {adicionaReserva, alterarReserva} from'../repository/reservaRepository.js';
+import {adicionaReserva, alterarReserva, removerReserva} from'../repository/reservaRepository.js';
 
 import { Router } from 'express';
 const server =Router();
@@ -21,15 +21,32 @@ server.post('/reserva', async (req, resp)=>{
 server.put('/reserva/:id', async (req, resp) => {
     try {
         const { id } = req.params;
-        const reserva = req.body;
+        const altreserva = req.body;
 
-        const resposta = await alterarReserva (id, reserva);
+        const resposta = await alterarReserva (id, altreserva);
         if (resposta != 1)
             throw new Error ('reserva não pode ser alterada');
         else
             resp.status (204).send();
 
     }catch (err) {
+        resp.status(400).send({
+            erro: err.messsage
+        })
+    }
+})
+
+server.delete('/reserva/:id', async (req, resp) => {
+    try{
+        const { id } = req.params;
+
+        const resposta = await removerReserva(id);
+        if (resposta != 1)
+            throw new Error ('reserva não pode ser removida');
+        else
+            resp.status (204).send();
+
+    } catch(err) {
         resp.status(400).send({
             erro: err.messsage
         })
