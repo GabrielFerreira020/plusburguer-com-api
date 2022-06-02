@@ -22,12 +22,12 @@ response
 
 request body
 {
-    "mesa": 0,
+     "funcionario": 0,
+    "mesa": "",
     "cliente": "",
     "pessoas": 0,
-    "reservas": "2020-10-00",
-    "observacao": "",
-    "funcionario": 0
+    "reservas": "2002-01-00",
+    "observacao": ""
 }
 
 response
