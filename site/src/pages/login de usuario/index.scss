@@ -1,0 +1,667 @@
+.login{
+    .pagina-completa{
+        background-color: #15141B;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .conteiner1 {
+        display: flex;
+        flex-direction: row;
+        margin-top: 1em;
+    
+        text-align: center;
+    }
+    
+    .img {
+        height: 110px;
+        width: 110px;
+        margin-left: 1em;
+    }
+    
+    .titulo
+    {
+        font-size: 30px;
+        color: white;
+        font-family: 'd';
+        margin-top: 1em;
+    
+    
+    }
+    
+    .subconteiner2{
+        text-align: center;
+        margin-left: 40em;
+    }
+    
+    .texto2{
+        color: white;
+        font-family: 'd';
+    }
+    
+    .conteiner2{
+        display: flex;
+        flex-direction: row;
+        margin-top: 1em;
+        margin-left: 52em;
+    }
+    
+    .box1{
+        width: 22em;
+        font-size: 17px;
+        height: 2em;
+        margin-left: 43em;
+        outline: none;
+        padding: 5px;
+    }
+    
+    .texto3{
+        color: white;
+        font-family: 'd';
+        margin-left: 46em;
+    }
+    
+    .conteiner3{
+        display: flex;
+        flex-direction: column;
+        margin-top: 2em;
+        justify-content: center;
+    
+    }
+    
+    .box2{
+        width: 22em;
+        font-size: 17px;
+        height: 2em;
+        margin-left: 43em;
+        outline: none;
+        padding: 5px;
+    }
+    
+    .texto4{
+        color: white;
+        font-family: 'd';
+        margin-left: 46em;
+    }
+    
+    .conteiner4{
+        display: flex;
+        flex-direction: column;
+        margin-top: 4em;
+        justify-content: center;
+    
+    }
+    
+    .texto5{
+        color: white;
+        font-family: 'd';
+        margin-top: 3em;
+        margin-left: 46em;
+    }
+    
+    .botão{
+        border: solid #F69D17;
+        font-size: 17px;
+        background-color:#F69D17;
+        margin-top: 3em;
+        height: 2em;
+        width: 22em;
+        color: white;
+        margin-left: 43em;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 35px;
+
+        cursor: pointer;
+    }
+    
+    .conteiner5{
+        display: flex;
+        flex-direction: column;
+        margin-top: 4em;
+    
+    }
+    
+    .imagens{
+        margin-top: 2em;
+        margin-left: 53em;
+    
+    }
+    
+    .img2 {
+        height: 50px;
+        width: 50px;
+        margin-left: 1em;
+        cursor: pointer;
+    }
+    
+    .img3 {
+        height: 50px;
+        width: 50px;
+        margin-left: 1em;
+        cursor: pointer;
+    }
+    @media(max-width: 1440px){
+        .pagina-completa{
+            height: 1200px;
+        }
+        .img{
+            max-width: 130px;
+            max-height: 130px;
+        }
+    
+        .titulo{
+            font-size: 40px;
+            color: white;
+            font-family: 'd';
+            margin-top: 0.5em;
+        }
+    
+        .subconteiner2{
+            margin-left: 21em;
+        }
+    
+        .conteiner2{
+            display: flex;
+            flex-direction: row;
+            margin-top: 1em;
+            margin-left: 38em;
+        }
+    
+        .box1{
+            width: 30em;
+            font-size: 21px;
+            height: 2.3em;
+            margin-left: 18.5em;
+        
+        }
+    
+        .box2{
+            width: 30em;
+            font-size: 21px;
+            height: 2.3em;
+            margin-left: 18.5em;
+        
+        }
+        
+        .texto3{
+            color: white;
+            font-family: 'd';
+            margin-left: 14em;
+            font-size: 28px;
+        }
+    
+        .texto4{
+            color: white;
+            font-family: 'd';
+            margin-left: 14em;
+            font-size: 28px;
+        }
+        .texto5{
+            margin-left: 40em;
+        }
+    
+        .botão{
+             font-size: 24px;
+            margin-top: 6em;
+            height: 2.35em;
+            width: 26em;
+            margin-left: 16.3em;
+        }
+    
+        .imagens{
+            margin-top: 2em;
+            margin-left: 37em;
+            
+        }
+        
+        .img2 {
+            height: 85px;
+            width: 85px;
+            margin-left: 1.5em;
+        }
+        
+        .img3 {
+            height: 85px;
+            width: 85px;
+            margin-left: 1.5em;
+        }
+    
+    }
+    
+    @media(max-width: 1024px){
+        .img{
+            max-width: 115px;
+            max-height: 115px;
+        }
+    
+        .titulo{
+            font-size: 35px;
+            color: white;
+            font-family: 'd';
+            margin-top: 1em;
+            }
+    
+        .subconteiner2{
+            margin-left: 11em;
+        }
+        .conteiner2{
+            display: flex;
+            flex-direction: row;
+            margin-top: 1em;
+            margin-left: 26em;
+        }
+    
+        .box1{
+            width: 25em;
+            font-size: 19px;
+            height: 2.1em;
+            margin-left: 14em;
+        
+        }
+    
+        .box2{
+            width: 25em;
+            font-size: 19px;
+            height: 2.1em;
+            margin-left: 14em;
+        
+        }
+        
+        .texto3{
+            color: white;
+            font-family: 'd';
+            margin-left: 12em;
+            font-size: 22px;
+        }
+    
+        .texto4{
+            color: white;
+            font-family: 'd';
+            margin-left: 12em;
+            font-size: 22px;
+        }
+    
+        .texto5{
+            margin-left: 28em;
+        }
+    
+        .botão{
+             font-size: 19px;
+            margin-top: 6em;
+            height: 2.15em;
+            width: 25em;
+            margin-left: 14em;
+        }
+    
+        .imagens{
+            margin-top: 2em;
+            margin-left: 26.5em;
+            
+        }
+        
+        .img2 {
+            height: 65px;
+            width: 65px;
+            margin-left: 1em;
+        }
+        
+        .img3 {
+            height: 65px;
+            width: 65px;
+            margin-left: 1em;
+        }
+    
+    }
+    
+    @media(max-width: 768px){
+        .img{
+            max-width: 70px;
+            min-width: 30px;
+            max-height: 70px;
+            min-height: 30px;
+        }
+    
+        .titulo{
+            font-size: 25px;
+        color: white;
+        font-family: 'd';
+        margin-top: 1em;
+        }
+    
+        .subconteiner2{
+            margin-left: 10em;
+        }
+        .conteiner2{
+            display: flex;
+            flex-direction: row;
+            margin-top: 1em;
+            margin-left: 19em;
+        }
+        .texto5{
+            margin-left: 21em;
+        }
+        .box1{
+            width: 20em;
+            font-size: 15px;
+            height: 1.95em;
+            margin-left: 16em;
+        
+        }
+    
+        .box2{
+            width: 20em;
+            font-size: 15px;
+            height: 1.95em;
+            margin-left: 16em;
+        }
+    
+        .texto3{
+            color: white;
+            font-family: 'd';
+            margin-left: 11em;
+        }
+    
+        .texto4{
+            color: white;
+            font-family: 'd';
+            margin-left: 11em;
+        }
+    
+        .botão{
+            
+            font-size: 15px;
+            margin-top: 6em;
+            height: 2em;
+            width: 20em; 
+            margin-left: 16em;
+        }
+    
+        .imagens{
+            
+            margin-left: 19.9em;
+            
+        }
+    
+        .img2 {
+            height: 40px;
+            width: 40px;
+            margin-left: 1em;
+            cursor: pointer;
+            
+        }
+        
+        .img3 {
+            height: 40px;
+            width: 40px;
+            margin-left: 0.7em;
+            cursor: pointer;
+            
+        }
+    
+        
+    }
+    
+    @media(max-width: 425px){
+    
+        .img{
+            max-width: 40px;
+            min-width: 15px;
+            max-height: 40px;
+            min-height: 15px;
+        }
+    
+        .titulo{
+            font-size: 17px;
+            color: white;
+            font-family: 'd';
+            margin-top: 0.7em;
+        }
+    
+        .subconteiner2{
+            margin-left: 3.5em;
+        }
+    
+        .conteiner2{
+            display: flex;
+            flex-direction: row;
+            margin-top: 1em;
+            margin-left: 8em;
+        }
+        .texto5{
+            margin-left: 9em;
+        }
+    
+        .box1{
+            width: 16em;
+            font-size: 12px;
+            height: 1.8em;
+            margin-left: 9em;
+        
+        }
+    
+        .box2{
+            width: 16em;
+            font-size: 12px;
+            height: 1.8em;
+            margin-left: 9em;
+        }
+    
+        .texto3{
+            color: white;
+            font-family: 'd';
+            margin-left: 10em;
+            font-size: 11px;
+        }
+    
+        .texto4{
+            color: white;
+            font-family: 'd';
+            margin-left: 10em;
+            font-size: 11px;
+        }
+    
+        .botão{
+            
+            font-size: 12px;
+            margin-top: 6em;
+            height: 1.8em;
+            width: 16em; 
+            margin-left: 9em;
+        }
+    
+        .imagens{
+            
+            margin-left: 10em;
+            
+        }
+    
+        .img2 {
+            height: 30px;
+            width: 30px;
+            margin-left: 0.5em;
+            cursor: pointer;
+            
+        }
+        
+        .img3 {
+            height: 30px;
+            width: 30px;
+            margin-left: 0.5em;
+            cursor: pointer;
+            
+        }
+    }
+    
+    @media(max-width: 375px){
+    
+        .img{
+            max-width: 35px;
+            min-width: 15px;
+            max-height: 35px;
+            min-height: 15px;
+        }
+    
+        .titulo{
+            font-size: 15px;
+            color: white;
+            font-family: 'd';
+            margin-top: 0.6em;
+        }
+    
+        .subconteiner2{
+            margin-left: 3em;
+        }
+        .conteiner2{
+            display: flex;
+            flex-direction: row;
+            margin-top: 1em;
+            margin-left: 6em;
+        }
+        .texto5{
+            margin-left: 8em;
+        }
+    
+        .box1{
+            width: 15em;
+            font-size: 11.5px;
+            height: 1.7em;
+            margin-left: 8.5em;
+        
+        }
+    
+        .box2{
+            width: 15em;
+            font-size: 11.5px;
+            height: 1.7em;
+            margin-left: 8.5em;
+        }
+    
+        .texto3{
+            color: white;
+            font-family: 'd';
+            margin-left: 11em;
+            font-size: 9px;
+        }
+    
+        .texto4{
+            color: white;
+            font-family: 'd';
+            margin-left: 11em;
+            font-size: 9px;
+        }
+    
+        .botão{
+            
+            font-size: 11.5px;
+            margin-top: 6em;
+            height: 1.8em;
+            width: 15em; 
+            margin-left: 8.5em;
+        }
+    
+        .imagens{
+            
+            margin-left: 9em;
+            
+        }
+    
+        .img2 {
+            height: 30px;
+            width: 30px;
+            margin-left: 0.5em;
+            cursor: pointer;
+            
+        }
+        
+        .img3 {
+            height: 30px;
+            width: 30px;
+            margin-left: 0.5em;
+            cursor: pointer;
+            
+        }
+    }
+    
+    @media(max-width: 320px){
+    
+        .img{
+            max-width: 30px;
+            min-width: 15px;
+            max-height: 30px;
+            min-height: 10px;
+        }
+    
+        .titulo{
+        font-size: 13px;
+        color: white;
+        font-family: 'd';
+        margin-top: 0.3em;
+        }
+    
+        .subconteiner2{
+            margin-left: 2.3em;
+        }
+    
+        .box1{
+            width: 14em;
+            font-size: 10px;
+            height: 1.6em;
+            margin-left: 8.5em;
+        
+        }
+    
+        .box2{
+            width: 14em;
+            font-size: 10px;
+            height: 1.6em;
+            margin-left: 8.5em;
+        }
+    
+        .texto3{
+            color: white;
+            font-family: 'd';
+            margin-left: 10em;
+            font-size: 8.5px;
+        }
+    
+        .texto4{
+            color: white;
+            font-family: 'd';
+            margin-left: 10em;
+            font-size: 8.5px;
+        }
+    
+        .botão{
+            
+            font-size: 11px;
+            margin-top: 3em;
+            height: 1.7em;
+            width: 13em; 
+            margin-left: 8em;
+        }
+    
+        .imagens{
+            
+            margin-left: 8em;
+            
+        }
+    
+        .img2 {
+            height: 27px;
+            width: 27px;
+            margin-left: 0.3em;
+            cursor: pointer;
+            
+        }
+        
+        .img3 {
+            height: 27px;
+            width: 27px;
+            margin-left: 0.3em;
+            cursor: pointer;
+            
+        }
+    }
+}

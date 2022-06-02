@@ -1,0 +1,72 @@
+
+
+    --logar
+(1) /POST   /FUNCIONARIO/login
+
+request body
+{
+    "email": "",
+    "senha": ""
+}
+
+response
+{
+    "id": 0,
+    "email": ""
+}
+
+//////////////////////////////////////////////
+
+    --adicionar
+(2) /POST       /reserva
+
+request body
+{
+    "mesa": 0,
+    "cliente": "",
+    "pessoas": 0,
+    "reservas": "2020-10-00",
+    "observacao": "",
+    "funcionario": 0
+}
+
+response
+{
+    "id": 1,
+    "mesa": 0,
+    "cliente": "",
+    "pessoas": 0,
+    "reservas": "2020-10-00",
+    "observacao": "",
+    "funcionario": 0
+}
+
+
+//////////////////////////////////////////////
+
+    --alterar
+(3) /PUT    /reserva/:id
+
+resquest
+{
+    "mesa": 0,
+    "cliente": "",
+    "pessoas": 0,
+    "reservas": "2020-10-00",
+    "observacao": "",
+    "funcionario": 0
+}
+
+response(204)
+-- sem conteudo
+
+
+//////////////////////////////////////////////
+
+    --remover
+(4) /DELETE     /reserva/:id
+
+response(204)
+
+
+//////////////////////////////////////////////

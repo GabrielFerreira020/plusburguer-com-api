@@ -1,0 +1,1149 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100&family=Irish+Grover&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+.menu{
+    .logo{
+        width: 106px; 
+        height: 97px;
+    }
+    .logo1{
+        width: 106px; 
+        height: 97px; 
+        margin-left: 20px; 
+        margin-top: 10px;
+    }
+    .header{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        
+    
+        width: 100%;
+        height: 110px;
+    
+        background-color: #15141B;
+    }
+    .header-ti{
+        color: #F69D17; 
+        margin-left: 30px;
+    }
+    
+    .header-es{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    
+        font-family: 'Irish Grover', cursive;
+        font-size: 20px;
+        letter-spacing: 2px;
+        margin-left: 20px;
+    }
+    
+    .header-di{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    
+        margin-right: 55px;
+        font-size: 18px;
+        font-family: 'Inter', sans-serif;
+        border: none;
+        color: #ffff;
+    }
+    
+    .f1{
+        background-image: url("../../../public/images/f-1.jpg");
+        background-size: 100%;
+        background-position: bottom;
+    
+        height: 850px;
+        color: #ffff;
+        font-family: 'Irish Grover', cursive;
+        font-size: 40px;
+        text-align: center;
+    }
+    .f1-h1{
+        width: 430px; 
+        margin-left: 50px; 
+        padding-top: 70px;
+    }
+    
+    
+    .f2{
+        height: 631px;
+        background-color: #D1CBC0;
+    }
+    
+    .f2-text{
+        padding: 70px 333px;
+        text-align: center;
+        width: 65%;
+    }
+    
+    .f2-titulo{
+        font-size: 40px;
+        font-family: 'Irish Grover', cursive;
+    }
+    
+    .f2-conteudo{
+        font-size: 20px;
+        font-family: 'Inter', sans-serif;  
+    
+        margin-top: 20px;
+    }
+    
+    
+    .f3{
+        height: 1249px;
+        background-color: #15141B;
+    }
+    
+    .f3-cima{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    
+        padding-top: 80px;
+        margin-bottom: 10px;
+    
+        color: #ffff;
+    }
+    
+    .f3-conteudo{
+        width: 500px;
+    }
+    
+    .f3-titulo{
+        font-size: 64px;
+        font-family: 'Irish Grover', cursive;
+    }
+    
+    .f3-text{
+        font-size: 20px;
+        font-family: 'Inter', sans-serif;
+        margin-top: 20px;
+    }
+    
+    .f3-image-hamburguer{
+        width: 596px; 
+        height: 442px; 
+        border-radius: 20px;
+    }
+    
+    .f3-image-escorregador{
+        width: 595px; 
+        height: 451px; 
+        border-radius: 20px;
+    }
+    
+    .f3-baixo{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    
+        color: #ffff;
+    
+        padding-top: 110px;
+    }
+    
+    .f3-conteudo2{
+        width: 510px;
+    }
+    
+    .f3-titulo2{
+        font-size: 64px;
+        font-family: 'Irish Grover', cursive;
+    }
+    
+    .f3-text2{
+        font-size: 20px;
+        font-family: 'Inter', sans-serif;
+    
+        margin-top: 20px;
+    }
+    
+    
+    .f4{
+        height: 1171px;
+        background-image: linear-gradient(to bottom,#C71D27,#15141B);
+    
+        color: #ffff;
+    }
+    
+    .f4-cima{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    
+        padding-top: 80px;
+    }
+    
+    .f4-conteudo{
+        width: 620px;
+    }
+    
+    .f4-titulo{
+        font-size: 40px;
+        font-family: 'Irish Grover', cursive;
+    }
+    
+    .f4-text{
+        font-size: 20px;
+        font-family: 'Inter', sans-serif;
+    
+        margin-top: 20px;
+    }
+    
+    .f4-image-tomate{
+        width: 612px;
+        height: 336px;
+        border-radius: 20px;
+    }
+    
+    .f4-image-hb{
+        width:620px; 
+        height:322px; 
+        border-radius: 20px;
+    }
+    
+    .f4-image-hb-2{
+        width:620px; 
+        height:322px; 
+        border-radius: 20px;
+    }
+    
+    .f4-baixo{
+        display: flex;
+        flex-direction: column;
+    
+        margin-top: 90px;
+    }
+    
+    .f4-titulo-baixo{
+        text-align: end;
+        padding-right: 140px;
+    
+        font-size: 40px;
+        font-family: 'Irish Grover', cursive;
+    }
+    
+    .f4-images{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    
+        margin-top: 60px;
+    }
+    
+    .f5{
+        height: 838px;
+        background-color: #15141B;
+    
+        color: #ffff;
+    }
+    
+    .f5-cima{
+        display: flex;
+        flex-direction: column;
+    
+        width: 550px;
+        height: 250px;
+    
+        padding-top: 100px;
+        padding-left: 185px;
+    }
+    
+    .f5-titulo{
+        font-size: 40px;
+        font-family: 'Irish Grover', cursive;
+    }
+    
+    .f5-text{
+        font-size: 20px;
+        font-family: 'Inter', sans-serif;
+    
+        margin-top: 20px;
+    }
+    
+    .f5-baixo{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    
+        margin-top: 10px;
+    }
+    
+    .f5-titulo-baixo{
+        width: 500px;
+    
+        font-size: 40px;
+        font-family: 'Irish Grover', cursive;
+        padding-top: 30px;
+    }
+    
+    .f5-image{
+        width: 657px; 
+        height: 358px; 
+        border-radius: 20px;
+    }
+    
+    
+    
+    .f6 {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    
+        background-color:#15141B;
+        height: 831px;
+        
+        padding-top: 100px;
+    }
+    .f6-box{
+        color: #D1CBC0;
+    }
+    
+    h3{
+        color:#F69D17 ;
+        font-size: 40px;
+        font-family: 'Irish Grover', cursive;
+    
+        width: 8em;
+    }
+    .gr {
+        width: 15em;
+        color: aliceblue;
+        margin-top: 1.5em;
+    
+        font-family: 'Inter', sans-serif;
+        font-size: 20px;
+    }
+    
+    .image{
+        width: 301px;
+        height: 240px;
+    }
+    
+    
+    
+    .rodape {
+        background-color: black;
+        
+        display: flex;
+        flex-direction: row;
+        height: 515px;
+    }
+    
+    .rodape-text{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    
+        padding-left: 100px;
+        padding-top: 140px;
+        width: 1000px;
+    
+    }
+    
+    .icons {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    
+        padding-top: 140px;
+        padding-left: 60px;
+    
+        width: 300px;
+    }
+    
+    .icon1 {
+        width: 60px;
+        height: 55px;
+        
+        cursor: pointer;
+    }
+    
+    
+    h6 {
+        color: #b68132;
+        font-size: 30px;
+        font-family: 'Inter', sans-serif;
+    }
+    
+    .inf {
+        color: aliceblue;
+        font-size: 20px;
+        font-family: 'Inter', sans-serif;
+        cursor: pointer;
+    }
+
+    @media (max-width: 1680px){
+        .f1{
+          background-size: 117%;
+          height: 680px;
+        }
+        .f5-image{
+            width: 530px; 
+            height: 300px; 
+            border-radius: 20px;
+        }
+        .f5-cima{
+            padding-top: 100px;
+            padding-left: 100px;
+        }
+    }
+    
+    @media (max-width: 1730px) {
+        .f2-text{
+            padding: 70px 260px;
+            text-align: center;
+            width: 66%;
+        }
+        .f5-image{
+            width: 590px; 
+            height: 320px; 
+            border-radius: 20px;
+        }
+        .f5-cima{
+            padding-top: 100px;
+            padding-left: 160px;
+        }
+    }
+    
+    @media (max-width: 1550px) {
+        .f2-text{
+            padding: 70px 230px;
+            text-align: center;
+            width: 66%;
+        }
+        .f5-image{
+            width: 500px; 
+            height: 280px; 
+            border-radius: 20px;
+        }
+        .f5-cima{
+            padding-top: 100px;
+            padding-left: 90px;
+        }
+    }
+    
+    @media (max-width: 1370px) {
+        .f2-text{
+            padding: 70px 204px;
+            text-align: center;
+            width: 66%;
+        }
+        .f4-image-tomate{
+            width: 540px;
+            height: 280px;
+        }
+        .f4-image-hb{
+            width: 530px; 
+            height:290px; 
+            border-radius: 20px;
+        }
+        .f4-image-hb-2{
+            width: 530px; 
+            height:290px; 
+            border-radius: 20px;
+        }
+        .f4{
+            height: 1080px;
+        }
+        .f5-image{
+            width: 480px; 
+            height: 270px; 
+            border-radius: 20px;
+        }
+    }
+    
+    @media (max-width: 1240px) {
+        .f1{
+            background-size: 135%;
+            height: 680px;
+        }
+        .f2{
+            height: 560px;
+        }
+        .f2-titulo{
+            font-size: 34px;
+        }
+        .f2-conteudo{
+            font-size: 17px;
+        }    
+        .f2-text{
+            padding: 70px 180px;
+            width: 66%;
+        }
+    
+        .f3-titulo{
+            font-size: 48px;
+        }
+        .f3-text{
+            font-size: 17px;
+        }
+        .f3-titulo2{
+            font-size: 48px;
+        }
+        .f3-text2{
+            font-size: 17px;
+        }
+        .f3-image-hamburguer{
+            width: 520px; 
+            height: 390px; 
+        }
+        .f3-image-escorregador{
+            width: 520px; 
+            height: 340px; 
+        }
+        .f3{
+            height: 1150px;
+        }
+    
+        .f4-titulo{
+            font-size: 34px;
+        }
+        .f4-text{
+            font-size: 17px;
+            width: 460px;
+        }
+        .f4-titulo-baixo{
+            padding-right: 140px;
+            font-size: 34px;
+        }
+        .f4-conteudo{
+            width: 460px;
+        }
+        .f4-image-tomate{
+            width: 460px;
+            height: 240px;
+        }
+        .f4-image-hb{
+            width: 450px; 
+            height:230px; 
+        }
+        .f4-image-hb-2{
+            width: 450px; 
+            height: 230px; 
+        }
+    
+        .f5{
+            height: 780px;
+        }
+        .f5-titulo{
+            font-size: 34px;
+        }
+        .f5-text{
+            font-size: 17px;
+        }
+        .f5-titulo-baixo{
+            width: 500px;
+            font-size: 34px;
+        }
+        .f5-cima{
+            padding-top: 100px;
+            padding-left: 70px;
+        }
+        .f5-image{
+            width: 440px; 
+            height: 250px; 
+            border-radius: 20px;
+        }
+    
+        .f6 {
+            height: 800px;
+        }
+        h3{
+            font-size: 34px;
+            width: 8em;
+        }
+        .gr {
+            width: 15em;
+            font-size: 17px;
+        }
+        
+        .image{
+            width: 280px;
+            height: 230px;
+        }
+    }
+    
+    @media (max-width: 1100px) {
+        .logo1{
+            width: 100px; 
+            height: 94px; 
+            margin-left: 10px; 
+            margin-top: 5px;
+        }
+        .f1{
+            background-size: 135%;
+        
+            height: 580px;
+        }
+        .f2-text{
+            padding: 70px 160px;
+            width: 66%;
+        }
+        .f3-conteudo{
+            width: 500px;
+        }
+        .f3-titulo{
+            font-size: 34px;
+            font-family: 'font1';
+        }
+        .f3-text{
+            font-size: 17px;
+        }
+        .f3-image-hamburguer{
+            width: 420px; 
+            height: 380px; 
+        }
+        
+        .f3-image-escorregador{
+            width: 420px; 
+            height: 380px; 
+        }
+     
+        .f3-conteudo2{
+            width: 510px;
+        }
+            
+        .f3-titulo2{
+            font-size: 34px;
+        }
+    
+        .f3-text2{
+            font-size: 17px;
+        }
+    
+        .f5-titulo-baixo{
+            width: 420px;
+            font-size: 34px;
+        }
+        .f5-image{
+            width: 420px; 
+            height: 230px; 
+            border-radius: 20px;
+        }
+    
+        .rodape-text{
+            padding-left: 30px;
+            padding-top: 140px;
+            width: 1000px;
+        }
+        h6 {
+            font-size: 30px;
+        }
+        .inf {
+            font-size: 17px;
+        }
+        .icon1 {
+            width: 40px;
+            height: 45px;
+        }
+        .icons {
+            padding-top: 140px;
+            padding-left: 40px;
+        
+            width: 300px;
+        }
+    }
+    
+    @media (max-width: 950px) {
+        .logo{
+            width: 98px; 
+            height: 93px;
+        }
+        .header-ti{
+            margin-left: 20px;
+            font-size: 36px;
+        }
+        .header-di{ 
+            margin-right: 40px;
+            font-size: 16px;
+        }
+        .f1{
+            background-size: 136%;
+            height: 540px;
+            font-size: 36px;
+        }
+    
+    
+        .f3{
+            height: 1000px;
+        }
+        .f3-conteudo{
+            width: 390px;
+        }
+        .f3-titulo{
+            font-size: 34px;
+            font-family: 'font1';
+        }
+        .f3-text{
+            font-size: 17px;
+        }
+        .f3-image-hamburguer{
+            width: 370px; 
+            height: 340px; 
+        }
+        .f3-image-escorregador{
+            width: 370px; 
+            height: 340px; 
+        }
+        .f3-conteudo2{
+            width: 390px;
+        }   
+        .f3-titulo2{
+            font-size: 34px;
+        }
+        .f3-text2{
+            font-size: 17px;
+        }
+    
+        .f4{
+            height: 980px;
+        }
+        .f4-titulo{
+            font-size: 34px;
+        }
+        .f4-text{
+            font-size: 17px;
+            width: 400px;
+        }
+        .f4-titulo-baixo{
+            padding-right: 140px;
+            font-size: 34px;
+        }
+        .f4-conteudo{
+            width: 400px;
+        }
+        .f4-image-tomate{
+            width: 350px;
+            height: 260px;
+        }
+        .f4-image-hb{
+            width: 400px; 
+            height:230px; 
+        }
+        .f4-image-hb-2{
+            width: 400px; 
+            height: 230px; 
+        }
+    
+        .f5-titulo-baixo{
+            width: 350px;
+            font-size: 34px;
+        }
+        .f5-image{
+            width: 350px; 
+            height: 230px; 
+            border-radius: 20px;
+        }
+        .f5-cima{
+            padding-top: 100px;
+            padding-left: 50px;
+        }
+        .f6 {
+            height: 700px;
+        }
+        h3{
+            font-size: 34px;
+            width: 3em;
+        }
+        .gr {
+            width: 13em;
+            font-size: 17px;
+        }
+        .image{
+            width: 230px;
+            height: 200px;
+        }
+        .rodape-text{
+            padding-left: 0px;
+            padding-top: 140px;
+            width: 1000px;
+        }
+        h6 {
+            font-size: 26px;
+        }
+        .inf {
+            font-size: 17px;
+        }
+        .icon1 {
+            width: 40px;
+            height: 45px;
+        }
+        .icons {
+            padding-top: 140px;
+            padding-left: 0px;
+        
+            width: 300px;
+        }
+    }
+    
+    
+    @media (max-width: 830px) {
+        .f1{
+            background-size: 136%;
+            height: 500px;
+        }
+    
+        .f2-text{
+            padding: 70px 140px;
+            width: 66%;
+        }
+        
+        .f3{
+            height: 900px;
+        }
+        .f3-conteudo{
+            width: 360px;
+        }
+        .f3-titulo{
+            font-size: 34px;
+            font-family: 'font1';
+        }
+        .f3-text{
+            font-size: 17px;
+        }
+        .f3-image-hamburguer{
+            width: 340px; 
+            height: 300px; 
+        }
+        .f3-image-escorregador{
+            width: 340px; 
+            height: 300px; 
+        }
+        .f3-conteudo2{
+            width: 390px;
+        }   
+        .f3-titulo2{
+            font-size: 34px;
+        }
+        .f3-text2{
+            font-size: 17px;
+        }
+    
+        .f4{
+            height: 980px;
+        }
+        .f4-titulo{
+            font-size: 34px;
+        }
+        .f4-text{
+            font-size: 17px;
+            width: 380px;
+        }
+        .f4-titulo-baixo{
+            padding-right: 0px;
+            text-align: center;
+            font-size: 34px;
+        }
+        .f4-conteudo{
+            width: 380px;
+        }
+        .f4-image-tomate{
+            width: 350px;
+            height: 260px;
+        }
+        .f4-image-hb{
+            width: 340px; 
+            height:200px; 
+        }
+        .f4-image-hb-2{
+            width: 340px; 
+            height: 200px; 
+        }
+        .rodape-text{
+            padding-left: 0px;
+        }
+        .icons {
+            padding-top: 100px;
+    
+        }
+    
+    }
+    @media (max-width:768px) {
+        .f2-text{
+            padding: 70px 130px;
+        }
+    }
+    
+    
+    @media (max-width: 425px) {
+        .logo{
+            width: 60px; 
+            height: 50px;
+        }
+        .logo1{
+            width: 60px; 
+            height: 50px;
+        }
+        .header{
+            height: 90px;
+        }
+        .header-ti{
+            margin-left: 10px;
+            text-align: center;
+            font-size: 26px;
+        }
+        .header-es{
+    
+            margin-left: 10px;
+        }
+        .header-di{
+            margin: 0px 0px ;
+        }
+        .header-entre{
+            display: none;
+        }
+        .f1{
+            background-size: 300%;
+            height: 577px;
+        }
+        .f1-h1{
+            width: 400px; 
+            margin-left: 14px; 
+            padding-top: 60px;
+        }
+        .f2{
+            height:650;
+        }
+        .f2-text{
+            padding: 0px 30px;
+            text-align: center;
+            width: 360px;
+            margin-top: 20px;
+        }
+        .f2-titulo{
+            font-size: 26px;
+        }
+        
+        .f2-conteudo{
+            font-size: 16px;
+            margin-top: 20px;
+        }
+        .f3{
+            height: 1349px;
+        }
+        
+        .f3-cima{
+            display: flex;
+            flex-direction: column;
+        
+            padding-top: 40px;
+            margin-bottom: 10px;
+        }
+        
+        .f3-conteudo{
+            width: 400px;
+            text-align: center;
+            margin: 0px 14px;
+        }
+        
+        .f3-titulo{
+            font-size: 36px;
+            margin: 0px 80px;
+            width: 250px;
+        }
+        
+        .f3-text{
+            font-size: 16px;
+            margin-top: 20px;
+        }
+        
+        .f3-image-hamburguer{
+            width: 320px; 
+            height: 300px; 
+            margin:30px 55px ;
+        }
+        .f3-image-escorregador{
+            width: 320px; 
+            height: 300px; 
+            margin:30px 55px;
+        }
+        .f3-baixo{
+            display: flex;
+            flex-direction: column-reverse;
+        
+            padding-top: 50px;
+        }
+        .f3-conteudo2{
+            width: 400px;
+            text-align: center;
+            margin: 0px 14px;
+        }
+        .f3-titulo2{
+            font-size: 36px;
+            margin: 0px 80px;
+            width: 250px;
+        }
+        .f3-text2{
+            font-size: 16px;
+            margin-top: 20px;
+        }
+        
+        .f4{
+            height: 1171px;
+        }
+        .f4-cima{
+            display: flex;
+            flex-direction: column;
+    
+            padding-top: 40px;
+        }
+        .f4-conteudo{
+            width: 400px;
+            text-align: center;
+            margin: 0px 14px;
+        }
+        .f4-titulo{
+            font-size: 36px;
+        }
+        .f4-text{
+            font-size: 16px;
+            margin: 0px 10px;
+        }
+        .f4-image-tomate{
+            width: 330px;
+            height: 300px;
+            margin: 30px 55px;
+        }
+        .f4-image-hb{
+            width: 330px;
+            height: 250px;
+            margin: 30px 55px;
+        }
+        .f4-image-hb-2{
+            display: none;
+        }
+        .f4-baixo{
+            margin-top: 20px;
+        }
+        .f4-images{
+            display: flex;
+            flex-direction: column;
+            margin-top: 20px;
+        }
+            
+        .f5{
+            height: 708px;
+        }
+    
+        .f5-cima{
+            display: flex;
+            flex-direction: column;
+    
+            width: 400px;
+            height: 200px;
+            padding: 20px 0px;
+            margin: 0px 13px;
+        }
+    
+        .f5-titulo{
+            font-size: 36px;
+            text-align: center;
+        }
+    
+        .f5-text{
+            font-size: 16px;
+            margin-top: 20px;
+            text-align: center;
+        }
+        .f5-baixo{
+            display: flex;
+            flex-direction: column;
+            margin-top: 10px;
+        }
+        
+        .f5-titulo-baixo{
+            width: 400px;
+        
+            font-size: 26px;
+            padding-top: 10px;
+            margin: 0px 13px;
+        }
+        
+        .f5-image{
+            width: 330px;
+            height: 250px;
+            margin: 30px 55px;
+        }
+        .f6 {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        
+            background-color:#15141B;
+            height: 1831px;
+            text-align: center;
+            
+            padding-top: 50px;
+        }
+        .f6-box{
+            display: flex;
+            flex-direction: column; 
+            align-items:center ;
+        }
+        .d1{
+            order: 1;
+        }
+        h3{
+            color:#F69D17 ;
+            font-size: 36px;
+            font-family: 'font1';
+        
+            width: 8em;
+        }
+        .gr {
+            width: 17em;
+            margin-top: 1.5em;
+        
+            font-size: 16px;
+        }
+        
+        .image{
+            width: 260px;
+            height: 220px;
+            margin-top: 15px;
+        }
+        .rodape {
+            display: flex;
+            flex-direction: column;
+            height: 705px;
+        }
+        .rodape-text{
+            display: flex;
+            flex-direction: column;
+            margin-top: 60px;
+        
+            padding-left: 20px;
+            padding-top: 0px;
+            width: 405px;
+        
+        }
+        .d2{
+            margin-top: 50px;
+        }
+        .icons {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+        
+            padding-top: 90px;
+            padding-left: 0px;
+        
+            width: 425px;
+        }
+        
+        .icon1 {
+            width: 40px;
+            height: 40px;
+        }
+    }
+}
