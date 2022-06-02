@@ -66,6 +66,9 @@ response(204)
     --remover
 (4) /DELETE     /reserva/:id
 
+DELETE FROM tb_reserva
+    WHERE mesa
+
 response(204)
 
 

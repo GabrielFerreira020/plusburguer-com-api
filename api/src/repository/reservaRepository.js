@@ -10,4 +10,27 @@ export async function adicionaReserva(reserva){
     return reserva
 }
 
+export async function alterarReserva(id, reserva){
+    const comando =
+
+   ` UPDATE 	TB_RESERVA
+        SET	NR_MESA 		    = ?,
+            NM_CLIENTE		    =?,
+         QTD_PESSOAS		    = ?,
+         DT_RESERVAS		    =?,
+         DS_OBSERVACAO	        =?
+   WHERE ID_RESERVA 	    	= ?`;
+
+    const [ resposta ] = await con.query (comando, [reserva.mesa, reserva.cliente, reserva.pessoas, reserva.reservas, reserva.observacao, reserva.funcionario,  id]);
+    return resposta.offerctedRows;
+}
+
+export async function removerReserva(id){
+    const comando =
+        `DELETE FROM TB_RESERVA`;
+
+    const [resposta] = await con.query(comando, [reserva]);
+    return resposta.affectedRows;
+}
+
 
