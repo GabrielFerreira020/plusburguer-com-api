@@ -21,8 +21,8 @@ export async function alterarReserva(id, reserva){
          DS_OBSERVACAO	        =?
    WHERE ID_RESERVA 	    	= ?`;
 
-    const [ resposta ] = await con.query (comando, [reserva.mesa, reserva.cliente, reserva.pessoas, reserva.reservas, reserva.observacao, reserva.funcionario,  id]);
-    return resposta.offerctedRows;
+    const [ resposta ] = await con.query (comando, [reserva.mesa, reserva.cliente, reserva.pessoas, reserva.reservas, reserva.observacao,  id]);
+    return resposta.affectedRows;
 }
 
 export async function removerReserva(id){
