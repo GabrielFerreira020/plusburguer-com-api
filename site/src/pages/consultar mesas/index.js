@@ -11,7 +11,7 @@ export default function Index(){
                 </div>
                 
                 <div className="container-tabela">
-                    <img style={{"width":"650px" , "height": "750px", }} className="img" src="/images/burguer-consulta" alt=""/>
+                    <img className="img" src="/images/burguer-consulta" alt=""/>
                     <table className="tabela">
                     
                         <tr className='header , font'>
