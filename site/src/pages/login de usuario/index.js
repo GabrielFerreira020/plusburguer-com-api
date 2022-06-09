@@ -1,12 +1,50 @@
+import { useNavigate } from 'react-router-dom';
+import axios from  'axios'
 import './index.scss';
-import { Link } from 'react-router-dom';
+
+import { useState } from 'react';
 
 
 
-export default function Index(){
+
+
+export default function Index(){ 
+
+    const [email, setEmail] = useState('');
+    const [senha, setSenha] = useState('');
+    const [erro, setErro]  = useState('');
+    
+
+    const navigate = useNavigate();
+    
+
+  async function entrarClick() {
+  
+
+      try{
+        const r = await axios.post('http://localhost:5000/funcionario/login', {
+            email: email,
+            senha: senha
+         });
+         
+            navigate('/Consultar');
+        
+         
+
+      } catch (err) {
+          if (err.response.status === 401){
+              setErro(err.response.data.erro);
+          }
+      }
+    
+       }
+
+
     return(
         <div className='login'>
             <main class="pagina-completa">
+
+                
                 <section class="conteiner1">
                     <div class="subconteiner">
                         <img src="/logo-hamburguer.png" class="img" alt=""/>
@@ -29,23 +67,25 @@ export default function Index(){
                     <div class="texto3">
                         Email
                     </div>
-                    <input type="text" class="box1"/>
+                    <input type="text" class="box1" value={email}  onChange={e => setEmail(e.target.value)}/>
                 </section>
 
                 <section class="conteiner4">
                     <div class="texto4">
                         Senha
                     </div>
-                    <input type="text" class="box2"/>
+                    <input type="password" class="box2" value={senha}  onChange={e => setSenha(e.target.value)}/>
                 </section>
 
                 <div class="texto5">
-                    <u>Esqueceu a senha?</u>
+                    <u>{erro}</u>
                 </div>
 
-                <Link to="/Consultar" class="botão" >
+                <div to="/Consultar" class="botão" onClick={entrarClick} >
                     Login
-                </Link>
+                </div>
+
+                
 
             </main>  
         </div>

@@ -12,11 +12,14 @@ server.post('/funcionario/login', async(req, resp) =>{
         if(!resposta){
             throw new Error('Credenciais inválidas')
         }
-
+      
         resp.send(resposta)
-    } catch (err) {
+    } catch  (err) {
+        console.log(err)
         resp.status(401).send({
-            erro: "Ocorreu um erro "
+            
+             erro: err.message
+             
         })
     }
 })
