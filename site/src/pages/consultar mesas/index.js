@@ -1,7 +1,15 @@
 import './index.scss';
 import { Link } from 'react-router-dom';
+import storage from 'local-storage'
+import { useNavigate } from 'react-router-dom';
 
 export default function Index(){
+    const navigate = useNavigate()
+
+    function sairClick() {
+    storage.remove('usuario-logado');
+    navigate('/login')
+    }
     return(
         <div className='consulta'>
             <main className='main'>
@@ -97,7 +105,7 @@ export default function Index(){
                 <nav className='navegacao'>
                     <div className='config-botao'> 
                         <button className='font , botao'>apagar</button>
-                        <Link  to="/"className='font , botao'>voltar</Link>
+                        <Link onClick={sairClick} to="/"className='font , botao'>voltar</Link>
                         <Link to="/adicionar" className='font , botao'>adicionar</Link>
                         <Link to="/editar" className='font , botao'>editar</Link>
                     </div>
