@@ -164,10 +164,17 @@
         }
         
     }
+    @media (max-width: 1280px) {
+        .container{
+            margin: 0px 190px;
+        }
+    }
     
     @media (max-width: 1024px){
         .container {
-            margin: 0px 270px;
+            margin: 0px 75px;
+            width: 900px;
+            margin-top: 20px;
         }
     }
     
