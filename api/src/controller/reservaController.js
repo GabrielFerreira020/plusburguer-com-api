@@ -1,4 +1,4 @@
-import {adicionaReserva, alterarReserva, removerReserva} from'../repository/reservaRepository.js';
+import {adicionaReserva, alterarReserva, listarTodas, removerReserva} from'../repository/reservaRepository.js';
 
 import { Router } from 'express';
 const server =Router();
@@ -50,6 +50,17 @@ server.delete('/reserva/:id', async (req, resp) => {
     } catch(err) {
         resp.status(400).send({
             erro: err.messsage
+        })
+    }
+})
+
+server.get('/reserva',async (req,resp)=>{
+    try {
+        const resposta = await listarTodas();
+        resp.send(resposta)
+    } catch (err) {
+        resp.status(400).send({
+            erro: err.message
         })
     }
 })

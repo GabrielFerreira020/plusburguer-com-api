@@ -35,3 +35,16 @@ export async function removerReserva(id){
 }
 
 
+export async function listarTodas(){
+    const comando=
+    `select NR_MESA		MESA,
+            NM_CLIENTE	NOME,
+            QTD_PESSOAS	QTD_PESSOAS,
+            DT_RESERVAS	HORA
+       From TB_RESERVA;
+    `
+    const [linhas] =await con.query(comando);
+    return linhas;
+}
+
+
