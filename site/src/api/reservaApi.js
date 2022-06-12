@@ -14,3 +14,8 @@ export async function adicionaReserva(mesa, cliente, pessoas, reservas, observac
     })
     return resposta.data;
 }
+
+export async function buscarPorId(id) {
+    const resposta = await api.get(`/reserva/${id}`);
+    return resposta.data;
+}

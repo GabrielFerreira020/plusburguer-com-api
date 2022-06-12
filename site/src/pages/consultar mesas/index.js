@@ -2,9 +2,14 @@ import './index.scss';
 import { Link } from 'react-router-dom';
 import storage from 'local-storage'
 import { useNavigate } from 'react-router-dom';
+import { adicionaReserva } from '../../api/reservaApi';
 
 export default function Index(){
     const navigate = useNavigate()
+
+    function editarReserva(id){
+        navigate(`/editar/${id}`);
+    }
 
     function sairClick() {
     storage.remove('usuario-logado');
@@ -107,7 +112,7 @@ export default function Index(){
                         <button className='font , botao'>apagar</button>
                         <Link onClick={sairClick} to="/"className='font , botao'>voltar</Link>
                         <Link to="/adicionar" className='font , botao'>adicionar</Link>
-                        <Link to="/editar" className='font , botao'>editar</Link>
+                        <Link to="/editar" className='font , botao' onClick={() => editarReserva(editarReserva)}>editar</Link>
                     </div>
                 </nav>
             </main>
