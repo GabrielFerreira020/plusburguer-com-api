@@ -49,7 +49,7 @@ export default function Index(){
                             </div>
                             <div className=''>
                                 <div className="texto , font">Data e hora</div>
-                                <input type="date"className="input3" value={reservasPPP} onChange={ e => setReservas(e.target.value)}/>
+                                <input type="date"className="input3" value={reservas} onChange={ e => setReservas(e.target.value)}/>
                             </div>
                         </div>
                         <div className='baixo-2'>
