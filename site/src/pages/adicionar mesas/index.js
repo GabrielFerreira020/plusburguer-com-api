@@ -1,8 +1,9 @@
 import './index.scss';
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 
-import { adicionaReserva, alterarReserva} from '../../api/reservaApi';
+import { adicionaReserva, listarTodas} from '../../api/reservaApi.js';
 
 export default function Index(){
         const [mesa, setMesa] = useState(0);
@@ -10,7 +11,27 @@ export default function Index(){
         const [pessoas, setPessoas] = useState(0);
         const [reservas, setReservas] = useState('');
         const [observacao, setObservacao] = useState('');
-        const [id, setId] = useState(0);
+        const [id, setId] = useState(0)
+
+        const {idParams} = useParams();
+        
+        useEffect(() => {
+            if(id) {
+                carregarReserva();
+            }
+        }, [])
+
+        async function carregarReserva () {
+            const resposta = await listarTodas(id);
+            setMesa(resposta.mesa);
+            setCliente(resposta.cliente);
+            setPessoas(resposta.pessoas);
+            setReservas(resposta.reservas);
+            setObservacao(resposta.observacao);
+            setId(resposta.id)
+        }
+
+        
 
         async function finalizarClick() {
             try{
