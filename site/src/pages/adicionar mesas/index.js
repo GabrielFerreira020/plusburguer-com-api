@@ -2,7 +2,7 @@ import './index.scss';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 
-import { adicionaReserva } from '../../api/reservaApi';
+import { adicionaReserva, alterarReserva} from '../../api/reservaApi';
 
 export default function Index(){
         const [mesa, setMesa] = useState(0);
@@ -10,13 +10,14 @@ export default function Index(){
         const [pessoas, setPessoas] = useState(0);
         const [reservas, setReservas] = useState('');
         const [observacao, setObservacao] = useState('');
+        const [id, setId] = useState(0);
 
         async function finalizarClick() {
             try{
-                const resposta = await adicionaReserva(mesa, cliente, pessoas, reservas, observacao);
-                alert('reserva cadastrada com sucesso');
-
-            }catch(err){
+            const resposta = await adicionaReserva(mesa, cliente, pessoas, reservas, observacao);
+            alert('reserva cadastrada com sucesso');
+             
+            }   catch (err){
                 alert(err.message);
             }
         }

@@ -34,4 +34,16 @@ export async function removerReserva(id){
     return resposta.affectedRows;
 }
 
+export async function consultarReserva (){
+    `SELECT ID_RESERVA ,
+    NR_MESA		MESA,
+   NM_CLIENTE	NOME,
+   QTD_PESSOAS	PESSOAS,
+   DT_RESERVAS	HORA
+   
+FROM TB_RESERVA`;
+
+const [linhas] = await con.query(comando);
+return linhas;
+}
 

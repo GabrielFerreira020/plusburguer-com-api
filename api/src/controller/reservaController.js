@@ -54,5 +54,17 @@ server.delete('/reserva/:id', async (req, resp) => {
     }
 })
 
+server.get('/reserva', async (req, resp) => {
+    try{
+        const resposta = await consultarReserva();
+        resp.send(resposta);
+
+    } catch(err) {
+        resp.status(400).send({
+            erro: err.messsage
+        })
+    }
+})
+
 
 export default server;
