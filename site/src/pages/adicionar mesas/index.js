@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 import { adicionaReserva, listarTodas, listaPorId, alterarReserva} from '../../api/reservaApi.js';
+import { toast } from 'react-toastify';
 
 export default function Index(){
         const [mesa, setMesa] = useState(0);
@@ -44,7 +45,7 @@ export default function Index(){
                     await alterarReserva(id, mesa, cliente, pessoas, reservas, observacao)
                 }
                 
-                alert('reserva cadastrada com sucesso'); 
+                toast.dark(' 🚀 reserva cadastrada com sucesso'); 
             }catch (err){
                 alert(err.message);
             }

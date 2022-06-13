@@ -23,6 +23,7 @@
     .lapislixos{
         cursor: pointer;
         margin: 2px;
+        
     }
     .cima{
         display: flex;
@@ -115,6 +116,12 @@
         text-align: center;
         padding: 12px;
     }
+    .botao:hover {background-color: #f7f200}
+    .botao:active {
+        background-color: #f7f200;
+        box-shadow: 0 5px #666;
+        transform: translateY(4px);}
+
     .config-botao{
         display: flex;
         justify-content: space-around;

@@ -113,9 +113,13 @@
         text-align: center;
         text-decoration: none;
         border-radius: 35px;
-
         cursor: pointer;
     }
+    .botão:active {
+        background-color: #f7f200;
+        box-shadow: 0 5px #666;
+        transform: translateY(4px);}
+        .botão:hover {background-color: #f7f200}
     
     .conteiner5{
         display: flex;

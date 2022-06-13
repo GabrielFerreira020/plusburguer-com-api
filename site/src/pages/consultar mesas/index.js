@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react';
 import { listarTodas, removerReserva } from '../../api/reservaApi';
 import 'react-confirm-alert/src/react-confirm-alert.css';
 import { confirmAlert} from 'react-confirm-alert'
+import {toast} from 'react-toastify'
 
 
 
@@ -50,6 +51,7 @@ export default function Index(){
                     onClick: async () => {
                         const reposta = await removerReserva(id, NOME);
                         carregarReserva();
+                        toast.dark(' 🚀 Reserva removida!')
                     }
                 },
                 {
