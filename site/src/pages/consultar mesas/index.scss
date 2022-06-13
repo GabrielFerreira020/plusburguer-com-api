@@ -36,7 +36,7 @@
     }
     .titulo{
         text-align: center;
-        margin-right: 260px;
+        margin-right: 240px;
         font-size: 44px;
         color: #ffffff;
         padding-top: 20px;
@@ -67,7 +67,7 @@
         background-color: #ffffff;
         //border-radius: 40px;
         border: none;
-        margin-right: 30px;
+        margin-right: 110px;
     }
 
 
@@ -91,6 +91,11 @@
         background-color: #ffffff;
         text-align: center;
         //height: 600px;
+    }
+    .checkbox{
+        cursor: pointer;
+        margin: 2px;
+        height: 25px;
     }
     
     .navegacao{
@@ -131,6 +136,9 @@
         }
         .titulo{
             margin-right: 190px;
+        }
+        .tab{
+            margin-right: 80px;
         }
         .img{
             width:560px;

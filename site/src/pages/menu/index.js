@@ -1,8 +1,8 @@
 import './index.scss';
 import { Link } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom';
-import { useEffect } from 'react';
-import storage from 'local-storage'
+// import { useNavigate } from 'react-router-dom';
+// import { useEffect } from 'react';
+// import storage from 'local-storage'
 
 export default function Index(){
     

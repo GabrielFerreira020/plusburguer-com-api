@@ -91,8 +91,9 @@ export default function Index(){
                                     <td>{item.QTD_PESSOAS}</td>
                                     <td>{item.DIA.substr(0, 10)}</td>
                                     <td>
-                                        <img widht = "20px" height="20px" src="/images/images/Lapis-icon.png" className='lapislixos'></img> 
-                                        <img widht = "20px" height="25px" src="/images/images/trash-can_38501.png" className='lapislixos' onClick={() => removerReservaClick(item.ID, item.NOME)}/>
+                                        <img widht = "20px" height="20px" src="/images/images/Lapis-icon.png" className='lapislixos' alt=""></img> 
+                                        <img widht = "20px" height="25px" src="/images/images/trash-can_38501.png" alt="" className='lapislixos' onClick={() => removerReservaClick(item.ID, item.NOME)}/>
+                                        <input className="checkbox"type="checkbox"/>
                                     </td>
                                 </tr>
                             )}                         
