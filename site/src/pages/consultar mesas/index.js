@@ -4,6 +4,9 @@ import storage from 'local-storage'
 import { useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { listarTodas, removerReserva } from '../../api/reservaApi';
+import 'react-confirm-alert/src/react-confirm-alert.css';
+import { confirmAlert} from 'react-confirm-alert'
+
 
 
 
@@ -37,10 +40,25 @@ export default function Index(){
     }
 
     async function removerReservaClick(id, NOME){
-        const reposta = await removerReserva(id, NOME);
-        alert('reserva removida');
-
-        carregarReserva();
+       
+        confirmAlert({
+            title:'Remover reserva',
+            message: `Deja remover a reserva${NOME}?`,
+            buttons: [
+                {
+                    label: 'Sim',
+                    onClick: async () => {
+                        const reposta = await removerReserva(id, NOME);
+                        carregarReserva();
+                    }
+                },
+                {
+                    label: 'Não'
+                }
+            ]
+        })
+        
+       
     }
 
     return(
