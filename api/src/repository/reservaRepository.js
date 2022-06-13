@@ -2,8 +2,8 @@ import { con } from './connection.js'
 
 export async function adicionaReserva(reserva){
     const comando =
-        `INSERT INTO TB_RESERVA(ID_FUNCIONARIO,  NR_MESA, NM_CLIENTE, QTD_PESSOAS, DT_RESERVAS, DS_OBSERVACAO)
-                        VALUES (?, ?, ?, ? , ?,?) `
+        `INSERT INTO TB_RESERVA(ID_FUNCIONARIO,  NR_MESA, NM_CLIENTE, QTD_PESSOAS, DT_RESERVAS, DS_OBSERVACAO ,DS_SITUACAO)
+                        VALUES (?, ?, ?, ? , ?,?, 'disponivel') `
     
     const [ resposta ] = await con.query(comando, [reserva.funcionario, reserva.mesa, reserva.cliente, reserva.pessoas, reserva.reservas, reserva.observacao]);
     reserva.id = resposta.insertId;
@@ -18,7 +18,8 @@ export async function alterarReserva(id, reserva){
             NM_CLIENTE		    =?,
             QTD_PESSOAS		    = ?,
             DT_RESERVAS		    =?,
-            DS_OBSERVACAO	     =?
+            DS_OBSERVACAO	     =?,
+            DS_SITUACAO          = ?
       WHERE ID_RESERVA 	    	= ?`;
 
     const [ resposta ] = await con.query (comando, [reserva.mesa, reserva.cliente, reserva.pessoas, reserva.reservas, reserva.observacao,  id]);
@@ -62,6 +63,6 @@ export async function listarPorId(id){
     const [linhas] = await con.query(comando, [id]);
     console.log(linhas)
     return linhas[0];
-}   
+}  
 
 
