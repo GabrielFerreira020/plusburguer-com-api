@@ -35,4 +35,9 @@ export async function listaPorId(id){
     const resposta = await api.get(`/reserva/${id}`);
     return resposta.data;
 }
+
+export async function removerReserva(id) {
+    const reposta = await api.delete(`/reserva/${id}`);
+    return  reposta.status;
+}
     

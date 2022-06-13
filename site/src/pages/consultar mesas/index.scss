@@ -19,6 +19,11 @@
     .font{
         font-family: 'Irish Grover', cursive;
     }
+
+    .lapislixos{
+        cursor: pointer;
+        margin: 2px;
+    }
     .cima{
         display: flex;
         flex-direction: row;
@@ -37,20 +42,43 @@
         padding-top: 20px;
     }
     .container-tabela{
-        height: 720px;
         display: flex;
         justify-content: space-between;
+        align-items: flex-start;
     }
+
+    
+    tbody {
+        display:block;
+        height:600px;
+        overflow:auto;
+    }
+    thead, tbody tr {
+        display:table;
+        width:100%;
+        table-layout:fixed;
+    }
+    table {
+        width:600px;
+    }
+
+    .tab {
+        //height: 600px;
+        background-color: #ffffff;
+        //border-radius: 40px;
+        border: none;
+        margin-right: 30px;
+    }
+
 
     .tabela{
         border-collapse: collapse;
-        width: 800px;
-        overflow: hidden;
-        margin-right: 30px;
+        //width: 800px;
+        //overflow: hidden;
         border-radius: 40px;
     }
     th{
-        width: 160px;
+        //width: 160px;
     }
     .head-tb{
         color: #15141B;
@@ -62,7 +90,7 @@
     .corpo-tb{
         background-color: #ffffff;
         text-align: center;
-        height: 600px;
+        //height: 600px;
     }
     
     .navegacao{
@@ -99,7 +127,7 @@
     }
     @media (max-width: 1280px) {
         .tabela{
-            height: 90%;
+           // height: 90%;
         }
         .titulo{
             margin-right: 190px;
@@ -123,7 +151,7 @@
             margin-right: 130px;
         }
         .tabela{
-            height:95%
+            //height:95%
         }
         .img{
             width:440px;

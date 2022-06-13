@@ -36,7 +36,8 @@ export async function removerReserva(id){
 
 export async function listarTodas(){
     const comando=
-    `select NR_MESA		MESA,
+    `select ID_RESERVA  ID,
+            NR_MESA		MESA,
             NM_CLIENTE	NOME,
             QTD_PESSOAS	QTD_PESSOAS,
             DT_RESERVAS	DIA

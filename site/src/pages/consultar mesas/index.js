@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import storage from 'local-storage'
 import { useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { listarTodas } from '../../api/reservaApi';
+import { listarTodas, removerReserva } from '../../api/reservaApi';
 
 
 
@@ -36,6 +36,13 @@ export default function Index(){
         navigate('/login')
     }
 
+    async function removerReservaClick(id, NOME){
+        const reposta = await removerReserva(id, NOME);
+        alert('reserva removida');
+
+        carregarReserva();
+    }
+
     return(
         <div className='consulta'>
             <main className='main'>
@@ -46,31 +53,34 @@ export default function Index(){
                 
                 <div className="container-tabela">
                     <img className="img" src="/images/burguer-consulta" alt=""/>
+
+                    <div className='tab' >
                     <table className="tabela">
                         <thead className='head-tb'>
                             <tr>
                                 <th>Mesas</th>
                                 <th>Nome</th>
-                                <th>Qtd pessoas</th>
-                                <th>data</th>
-                                <th>Apagar e Editar</th>    
+                                <th>Qtd Pessoas</th>
+                                <th>Data</th>
+                                <th></th>    
                             </tr>
                         </thead>
                         <tbody className='corpo-tb'>
                             {reserva.map(item =>
-                                <tr>
+                                <tr key={item.ID}>
                                     <td>{item.MESA}</td>
                                     <td>{item.NOME}</td>
                                     <td>{item.QTD_PESSOAS}</td>
                                     <td>{item.DIA.substr(0, 10)}</td>
                                     <td>
-                                        <img widht = "20px" height="20px" src="/images/images/Lapis-icon.png"></img> 
-                                        <img widht = "20px" height="25px" src="/images/images/trash-can_38501.png"></img>
+                                        <img widht = "20px" height="20px" src="/images/images/Lapis-icon.png" className='lapislixos'></img> 
+                                        <img widht = "20px" height="25px" src="/images/images/trash-can_38501.png" className='lapislixos' onClick={() => removerReservaClick(item.ID, item.NOME)}/>
                                     </td>
                                 </tr>
                             )}                         
                         </tbody>
                     </table>
+                    </div>
                 </div>
 
                 <nav className='navegacao'>
