@@ -1,4 +1,4 @@
-import {adicionaReserva, alterarReserva, listarTodas, removerReserva} from'../repository/reservaRepository.js';
+import {adicionaReserva, alterarReserva, listarPorId, listarTodas, removerReserva} from'../repository/reservaRepository.js';
 
 import { Router } from 'express';
 const server =Router();
@@ -64,6 +64,20 @@ server.get('/reserva',async (req,resp)=>{
         })
     }
 })
+
+server.get('/reserva/:id', async (req,resp) => {
+    try {
+        const { id } = req.params;
+        const resposta = await listarPorId(Number(id));
+        resp.send(resposta)
+    } catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        })
+    }
+})
+
+
 
 
 export default server;

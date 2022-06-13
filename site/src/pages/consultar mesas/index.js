@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom';
 import storage from 'local-storage'
 import { useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { adicionaReserva, listarTodas } from '../../api/reservaApi';
+import { listarTodas } from '../../api/reservaApi';
+
 
 
 export default function Index(){
@@ -11,9 +12,14 @@ export default function Index(){
     const [reserva, setReserva] = useState ([]);
 
     async function  carregarReserva () {
-        const resp = await listarTodas();
-        console.log(resp);
-        setReserva(resp);
+        try {
+            const resp = await listarTodas();  
+            console.log(resp)
+            setReserva(resp);
+        } catch(e) {
+            console.log(e)
+            setReserva([])
+        }
     }
 
     useEffect(() => {
@@ -21,13 +27,13 @@ export default function Index(){
     }, [])
 
 
-    function editarReserva(id){
-        navigate(`/editar/${id}`);
-    }
+    // function editarReserva(id){
+    //      navigate(`/editar/${id}`);
+    // }
 
     function sairClick() {
-    storage.remove('usuario-logado');
-    navigate('/login')
+        storage.remove('usuario-logado');
+        navigate('/login')
     }
 
     return(
@@ -41,38 +47,36 @@ export default function Index(){
                 <div className="container-tabela">
                     <img className="img" src="/images/burguer-consulta" alt=""/>
                     <table className="tabela">
-                       
-                        <tr className='header , font'>
-                            <th className="head-">Mesa</th>
-                            <th className="head-">Nome</th>
-                            <th className="head-">Qtd pessoas</th>
-                            <th className="head-">Data</th>
-                            <th className="head-">Hora</th>
-                        </tr>
-        
-          
-                <tr className="corpo">
-                    <td className="config-td"></td>
-                    <td className="config-td"></td>
-                    <td className="config-td">07</td>
-                    <td className="config-td">19/02</td>
-                    <td className="config-td"> 
-                        <img widht = "20px" height="20px" src="/images/images/Lapis-icon.png"></img>
-                        <img widht = "20px" height="25px" src="/images/images/trash-can_38501.png"></img>
-                    </td>
-                </tr>
-            
-       
+                        <thead className='head-tb'>
+                            <tr>
+                                <th>Mesas</th>
+                                <th>Nome</th>
+                                <th>Qtd pessoas</th>
+                                <th>data</th>
+                                <th>Apagar e Editar</th>    
+                            </tr>
+                        </thead>
+                        <tbody className='corpo-tb'>
+                            {reserva.map(item =>
+                                <tr>
+                                    <td>{item.MESA}</td>
+                                    <td>{item.NOME}</td>
+                                    <td>{item.QTD_PESSOAS}</td>
+                                    <td>{item.DIA.substr(0, 10)}</td>
+                                    <td>
+                                        <img widht = "20px" height="20px" src="/images/images/Lapis-icon.png"></img> 
+                                        <img widht = "20px" height="25px" src="/images/images/trash-can_38501.png"></img>
+                                    </td>
+                                </tr>
+                            )}                         
+                        </tbody>
                     </table>
-
-
                 </div>
+
                 <nav className='navegacao'>
                     <div className='config-botao'> 
-                        <button className='font , botao'>apagar</button>
                         <Link onClick={sairClick} to="/"className='font , botao'>voltar</Link>
                         <Link to="/adicionar" className='font , botao'>adicionar</Link>
-                        <Link to="/editar" className='font , botao' onClick={() => editarReserva(editarReserva)}>editar</Link>
                     </div>
                 </nav>
             </main>

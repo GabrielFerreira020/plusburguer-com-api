@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
-import { adicionaReserva, listarTodas} from '../../api/reservaApi.js';
+import { adicionaReserva, listarTodas, listaPorId, alterarReserva} from '../../api/reservaApi.js';
 
 export default function Index(){
         const [mesa, setMesa] = useState(0);
@@ -16,18 +16,20 @@ export default function Index(){
         const {idParams} = useParams();
         
         useEffect(() => {
-            if(id) {
-                carregarReserva();
+            if(idParams) {
+                listaPorid();
             }
         }, [])
 
-        async function carregarReserva () {
+
+
+        async function listaPorid () {
             const resposta = await listarTodas(id);
-            setMesa(resposta.mesa);
-            setCliente(resposta.cliente);
-            setPessoas(resposta.pessoas);
-            setReservas(resposta.reservas);
-            setObservacao(resposta.observacao);
+            setMesa(resposta.MESA);
+            setCliente(resposta.NOME);
+            setPessoas(resposta.QTD_PESSOAS);
+            setReservas(resposta.DIA.substr(0, 10));
+            setObservacao(resposta.OBSERVACAO);
             setId(resposta.id)
         }
 
@@ -35,10 +37,15 @@ export default function Index(){
 
         async function finalizarClick() {
             try{
-            const resposta = await adicionaReserva(mesa, cliente, pessoas, reservas, observacao);
-            alert('reserva cadastrada com sucesso');
-             
-            }   catch (err){
+                if(id === 0 ){
+                    const resposta = await adicionaReserva(mesa, cliente, pessoas, reservas, observacao);
+                    setId(resposta.id);
+                }else{
+                    await alterarReserva(id, mesa, cliente, pessoas, reservas, observacao)
+                }
+                
+                alert('reserva cadastrada com sucesso'); 
+            }catch (err){
                 alert(err.message);
             }
         }

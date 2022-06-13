@@ -13,13 +13,13 @@ export async function adicionaReserva(reserva){
 export async function alterarReserva(id, reserva){
     const comando =
 
-   ` UPDATE 	TB_RESERVA
+   ` UPDATE TB_RESERVA
         SET	NR_MESA 		    = ?,
             NM_CLIENTE		    =?,
-         QTD_PESSOAS		    = ?,
-         DT_RESERVAS		    =?,
-         DS_OBSERVACAO	        =?
-   WHERE ID_RESERVA 	    	= ?`;
+            QTD_PESSOAS		    = ?,
+            DT_RESERVAS		    =?,
+            DS_OBSERVACAO	     =?
+      WHERE ID_RESERVA 	    	= ?`;
 
     const [ resposta ] = await con.query (comando, [reserva.mesa, reserva.cliente, reserva.pessoas, reserva.reservas, reserva.observacao,  id]);
     return resposta.affectedRows;
@@ -39,11 +39,28 @@ export async function listarTodas(){
     `select NR_MESA		MESA,
             NM_CLIENTE	NOME,
             QTD_PESSOAS	QTD_PESSOAS,
-            DT_RESERVAS	HORA
+            DT_RESERVAS	DIA
        From TB_RESERVA;
     `
     const [linhas] =await con.query(comando);
     return linhas;
 }
+
+
+export async function listarPorId(id){
+    const comando =
+    `select NR_MESA		    MESA,
+            NM_CLIENTE	    NOME,
+            QTD_PESSOAS	    QTD_PESSOAS,
+            DT_RESERVAS	    DIA,
+            DS_OBSERVACAO   OBSERVACAO
+       From TB_RESERVA
+      where ID_RESERVA = ?
+    `;
+    
+    const [linhas] = await con.query(comando, [id]);
+    console.log(linhas)
+    return linhas[0];
+}   
 
 

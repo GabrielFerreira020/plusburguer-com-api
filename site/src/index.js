@@ -9,7 +9,6 @@ import Menu from './pages/menu/index.js';
 import Login from'./pages/login de usuario/';
 import Consultar from'./pages/consultar mesas/';
 import Adicionar from'./pages/adicionar mesas/';
-import Editar from'./pages/adicionar mesas/';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
