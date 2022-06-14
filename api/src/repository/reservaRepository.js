@@ -11,6 +11,7 @@ export async function adicionaReserva(reserva){
 }
 
 export async function alterarReserva(id, reserva){
+    
     const comando =
 
    ` UPDATE TB_RESERVA
@@ -18,11 +19,10 @@ export async function alterarReserva(id, reserva){
             NM_CLIENTE		    =?,
             QTD_PESSOAS		    = ?,
             DT_RESERVAS		    =?,
-            DS_OBSERVACAO	     =?,
-            DS_SITUACAO          = ?
+            DS_OBSERVACAO	     =?
       WHERE ID_RESERVA 	    	= ?`;
 
-    const [ resposta ] = await con.query (comando, [reserva.mesa, reserva.cliente, reserva.pessoas, reserva.reservas, reserva.observacao,  id]);
+    const [ resposta ] = await con.query (comando, [reserva.mesa, reserva.cliente, reserva.pessoas, reserva.reservas, reserva.observacao,id]);
     return resposta.affectedRows;
 }
 
