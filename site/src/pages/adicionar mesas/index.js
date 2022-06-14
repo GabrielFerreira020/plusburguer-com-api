@@ -50,11 +50,8 @@ export default function Index(){
                 {
                     await alterarReserva(id, mesa, cliente, pessoas, reservas, observacao);
                     toast.dark ( ' 🚀 Reserva alterada com sucesso!!!!');
-
                 }
-                
-                
-                
+                   
             }catch (err){
                 if(err.message)
                 toast.error(err.response.data.erro)

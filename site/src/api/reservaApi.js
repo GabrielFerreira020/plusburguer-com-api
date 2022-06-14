@@ -16,7 +16,7 @@ export async function adicionaReserva(mesa, cliente, pessoas, reservas, observac
 }
 
 export async function alterarReserva(id, mesa, cliente, pessoas, reservas, observacao){
-    const resposta = await api.put(`/reserva ${id}`, {
+    const resposta = await api.put(`/reserva/${id}`, {
         mesa:mesa,
         cliente:cliente,
         pessoas:pessoas,

@@ -11,9 +11,7 @@ export async function adicionaReserva(reserva){
 }
 
 export async function alterarReserva(id, reserva){
-    
     const comando =
-
    ` UPDATE TB_RESERVA
         SET	NR_MESA 		    = ?,
             NM_CLIENTE		    =?,
@@ -42,8 +40,9 @@ export async function listarTodas(){
             NM_CLIENTE	NOME,
             QTD_PESSOAS	QTD_PESSOAS,
             DT_RESERVAS	DIA
-       From TB_RESERVA;
-    `
+       From TB_RESERVA
+      WHERE DT_RESERVAS >= DATE(NOW())
+   ORDER BY DT_RESERVAS ASC`
     const [linhas] =await con.query(comando);
     return linhas;
 }
@@ -61,7 +60,6 @@ export async function listarPorId(id){
       where ID_RESERVA = ? `;
     
     const [linhas] = await con.query(comando, [id]);
-    console.log(linhas)
     return linhas[0];
 }  
 
