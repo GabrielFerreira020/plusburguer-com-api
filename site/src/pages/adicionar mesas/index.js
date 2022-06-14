@@ -3,10 +3,11 @@ import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
-import { adicionaReserva, listarTodas, listaPorId, alterarReserva} from '../../api/reservaApi.js';
+import { adicionaReserva, listarTodas, buscarPorId, alterarReserva} from '../../api/reservaApi.js';
 import { toast } from 'react-toastify';
 
 export default function Index(){
+       
         const [mesa, setMesa] = useState(0);
         const [cliente, setCliente] = useState('');
         const [pessoas, setPessoas] = useState(0);
@@ -18,22 +19,24 @@ export default function Index(){
         
         useEffect(() => {
             if(idParams) {
-                listaPorid();
+                carregarReserva();
             }
         }, [])
 
 
 
-        async function listaPorid () {
-            const resposta = await listarTodas(id);
+            
+        
+      async function carregarReserva() {
+          const resposta = await buscarPorId(idParams);
+          
             setMesa(resposta.MESA);
             setCliente(resposta.NOME);
             setPessoas(resposta.QTD_PESSOAS);
             setReservas(resposta.DIA.substr(0, 10));
             setObservacao(resposta.OBSERVACAO);
             setId(resposta.id)
-        }
-
+      }
         
 
         async function finalizarClick() {
@@ -41,13 +44,22 @@ export default function Index(){
                 if(id === 0 ){
                     const resposta = await adicionaReserva(mesa, cliente, pessoas, reservas, observacao);
                     setId(resposta.id);
-                }else{
-                    await alterarReserva(id, mesa, cliente, pessoas, reservas, observacao)
+
+                    toast.dark(' 🚀Reserva cadastrado com sucesso!');
+                }else
+                {
+                    await alterarReserva(id, mesa, cliente, pessoas, reservas, observacao);
+                    toast.dark ( ' 🚀 Reserva alterada com sucesso!!!!');
+
                 }
                 
-                toast.dark(' 🚀 reserva cadastrada com sucesso'); 
+                
+                
             }catch (err){
-                alert(err.message);
+                if(err.message)
+                toast.error(err.response.data.erro)
+                else 
+                toast.error(err.message)
             }
         }
         

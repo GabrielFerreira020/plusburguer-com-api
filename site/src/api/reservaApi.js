@@ -31,7 +31,7 @@ export async function listarTodas(){
     return resposta.data
 }
 
-export async function listaPorId(id){
+export async function buscarPorId(id){
     const resposta = await api.get(`/reserva/${id}`);
     return resposta.data;
 }

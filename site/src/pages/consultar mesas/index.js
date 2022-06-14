@@ -1,5 +1,5 @@
 import './index.scss';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import storage from 'local-storage'
 import { useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
@@ -14,6 +14,11 @@ import {toast} from 'react-toastify'
 export default function Index(){
     const navigate = useNavigate()
     const [reserva, setReserva] = useState ([]);
+
+    const {idParam} = useParams();
+        useEffect(() => {
+        carregarReserva();
+        }, [])
 
     async function  carregarReserva () {
         try {
@@ -31,9 +36,7 @@ export default function Index(){
     }, [])
 
 
-    // function editarReserva(id){
-    //      navigate(`/editar/${id}`);
-    // }
+
 
     function sairClick() {
         storage.remove('usuario-logado');
@@ -63,6 +66,12 @@ export default function Index(){
        
     }
 
+
+
+    function editarReserva(id){
+   navigate(`/Alterar/${id}`);
+    }
+   
     return(
         <div className='consulta'>
             <main className='main'>
@@ -93,7 +102,7 @@ export default function Index(){
                                     <td>{item.QTD_PESSOAS}</td>
                                     <td>{item.DIA.substr(0, 10)}</td>
                                     <td>
-                                        <img widht = "20px" height="20px" src="/images/images/Lapis-icon.png" className='lapislixos' alt=""></img> 
+                                        <img widht = "20px" height="20px" src="/images/images/Lapis-icon.png" className='lapislixos' alt="" onClick={() => editarReserva(item.ID)}></img> 
                                         <img widht = "20px" height="25px" src="/images/images/trash-can_38501.png" alt="" className='lapislixos' onClick={() => removerReservaClick(item.ID, item.NOME)}/>
                                         <input className="checkbox"type="checkbox"/>
                                     </td>

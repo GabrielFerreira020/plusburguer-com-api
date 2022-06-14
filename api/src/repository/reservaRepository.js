@@ -51,14 +51,14 @@ export async function listarTodas(){
 
 export async function listarPorId(id){
     const comando =
-    `select NR_MESA		    MESA,
+    `select id_reserva      id,
+            NR_MESA		    MESA,
             NM_CLIENTE	    NOME,
             QTD_PESSOAS	    QTD_PESSOAS,
             DT_RESERVAS	    DIA,
             DS_OBSERVACAO   OBSERVACAO
        From TB_RESERVA
-      where ID_RESERVA = ?
-    `;
+      where ID_RESERVA = ? `;
     
     const [linhas] = await con.query(comando, [id]);
     console.log(linhas)
