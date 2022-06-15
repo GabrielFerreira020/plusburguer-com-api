@@ -3,7 +3,7 @@ import { con } from './connection.js'
 export async function adicionaReserva(reserva){
     const comando =
         `INSERT INTO TB_RESERVA(ID_FUNCIONARIO,  NR_MESA, NM_CLIENTE, QTD_PESSOAS, DT_RESERVAS, DS_OBSERVACAO ,DS_SITUACAO)
-                        VALUES (?, ?, ?, ? , ?,?, 'disponivel') `
+                        VALUES (?, ?, ?, ?, ?, ?, 'disponivel') `
     
     const [ resposta ] = await con.query(comando, [reserva.funcionario, reserva.mesa, reserva.cliente, reserva.pessoas, reserva.reservas, reserva.observacao]);
     reserva.id = resposta.insertId;
@@ -35,14 +35,15 @@ export async function removerReserva(id){
 
 export async function listarTodas(){
     const comando=
-    `select ID_RESERVA  ID,
-            NR_MESA		MESA,
-            NM_CLIENTE	NOME,
-            QTD_PESSOAS	QTD_PESSOAS,
-            DT_RESERVAS	DIA
-       From TB_RESERVA
-      WHERE DT_RESERVAS >= DATE(NOW())
-   ORDER BY DT_RESERVAS ASC`
+    `select     ID_RESERVA  ID,
+                NR_MESA		MESA,
+                NM_CLIENTE	NOME,
+                QTD_PESSOAS	QTD_PESSOAS,
+                DT_RESERVAS	DIA,
+                DS_SITUACAO SITUACAO
+           From TB_RESERVA
+          WHERE date(DT_RESERVAS) = current_date()
+       ORDER BY DT_RESERVAS ASC`
     const [linhas] =await con.query(comando);
     return linhas;
 }
@@ -61,6 +62,18 @@ export async function listarPorId(id){
     
     const [linhas] = await con.query(comando, [id]);
     return linhas[0];
-}  
+} 
+
+
+
+export async function concluirReserva(id){
+    const comando =
+    `update TB_RESERVA
+        SET DS_SITUACAO   =  'Concluido'
+      where ID_RESERVA    =  ?
+    `;
+    const [ resposta ] = await con.query (comando, [id]);
+    return resposta;
+}
 
 

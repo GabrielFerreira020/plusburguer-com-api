@@ -3,7 +3,7 @@ import { Link, useParams } from 'react-router-dom';
 import storage from 'local-storage'
 import { useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { listarTodas, removerReserva } from '../../api/reservaApi';
+import { listarTodas, removerReserva, concluirReserva} from '../../api/reservaApi';
 import 'react-confirm-alert/src/react-confirm-alert.css';
 import { confirmAlert} from 'react-confirm-alert'
 import {toast} from 'react-toastify'
@@ -35,8 +35,15 @@ export default function Index(){
         carregarReserva();
     }, [])
 
+    useEffect(()=> {
+        concluirReservaClick();
+    }, [])
 
-
+    async function concluirReservaClick(id){
+        const resposta = await concluirReserva(id);
+        carregarReserva();
+         
+    }
 
     function sairClick() {
         storage.remove('usuario-logado');
@@ -69,7 +76,7 @@ export default function Index(){
 
 
     function editarReserva(id){
-   navigate(`/Alterar/${id}`);
+        navigate(`/Alterar/${id}`);
     }
    
     return(
@@ -96,15 +103,18 @@ export default function Index(){
                         </thead>
                         <tbody className='corpo-tb'>
                             {reserva.map(item =>
-                                <tr key={item.ID}>
+                                <tr key={item.ID} style={{backgroundColor: item.SITUACAO == 'Concluido' ? '#Acdf87' : 'white'}}>
                                     <td>{item.MESA}</td>
                                     <td>{item.NOME}</td>
                                     <td>{item.QTD_PESSOAS}</td>
-                                    <td>{item.DIA.substr(0, 10)}</td>
+                                    <td>
+                                        {item.DIA.substr(0, 10)} <br />
+                                        {item.DIA.substr(11, 5)}
+                                    </td>
                                     <td>
                                         <img widht = "20px" height="20px" src="/images/images/Lapis-icon.png" className='lapislixos' alt="" onClick={() => editarReserva(item.ID)}></img> 
                                         <img widht = "20px" height="25px" src="/images/images/trash-can_38501.png" alt="" className='lapislixos' onClick={() => removerReservaClick(item.ID, item.NOME)}/>
-                                        <input className="checkbox"type="checkbox"/>
+                                        <input className="checkbox"type="checkbox" onClick={() => concluirReservaClick( item.ID)}/>
                                     </td>
                                 </tr>
                             )}                         

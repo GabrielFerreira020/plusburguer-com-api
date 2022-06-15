@@ -40,4 +40,9 @@ export async function removerReserva(id) {
     const reposta = await api.delete(`/reserva/${id}`);
     return  reposta.status;
 }
-    
+
+
+export async function concluirReserva(id) {
+    const reposta = await api.put(`/reserva/concluido/${id}`);
+    return  reposta.status;
+}

@@ -1,4 +1,4 @@
-import {adicionaReserva, alterarReserva, listarPorId, listarTodas, removerReserva} from'../repository/reservaRepository.js';
+import {adicionaReserva, alterarReserva, concluirReserva, listarPorId, listarTodas, removerReserva} from'../repository/reservaRepository.js';
 
 import { Router } from 'express';
 const server =Router();
@@ -70,6 +70,19 @@ server.get('/reserva/:id', async (req,resp) => {
         const { id } = req.params;
         const resposta = await listarPorId(Number(id));
         resp.send(resposta)
+    } catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        })
+    }
+})
+
+
+server.put('/reserva/concluido/:id', async (req,resp)=>{
+    try {
+        const { id } = req.params;
+        const resposta = await concluirReserva(id);
+        resp.status(200).send();
     } catch (err) {
         resp.status(400).send({
             erro: err.message
