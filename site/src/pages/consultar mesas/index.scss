@@ -1,4 +1,4 @@
-
+                                                        
 *{
     margin: 0px;
     padding: 0px;
@@ -10,7 +10,7 @@
 
 .consulta{
     
-    background-color: #15141B;
+     background-color: #15141B;
     .main{
         height: 100vh;
         display: flex;
@@ -37,7 +37,7 @@
     }
     .titulo{
         text-align: center;
-        margin-right: 240px;
+        margin-right: 215,px;
         font-size: 44px;
         color: #ffffff;
         padding-top: 20px;
@@ -60,7 +60,7 @@
         table-layout:fixed;
     }
     table {
-        width:600px;
+        width:720px;
     }
 
     .tab {
@@ -71,6 +71,9 @@
         margin-right: 110px;
     }
 
+    tbody > tr:nth-child(2n) {
+        background-color: #dadada;
+    }
 
     .tabela{
         border-collapse: collapse;

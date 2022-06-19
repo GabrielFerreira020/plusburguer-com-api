@@ -40,6 +40,7 @@ export async function listarTodas(){
                 NM_CLIENTE	NOME,
                 QTD_PESSOAS	QTD_PESSOAS,
                 DT_RESERVAS	DIA,
+                DS_OBSERVACAO   OBSERVACAO,
                 DS_SITUACAO SITUACAO
            From TB_RESERVA
           WHERE date(DT_RESERVAS) = current_date()

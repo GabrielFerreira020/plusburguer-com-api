@@ -93,8 +93,8 @@ export default function Index(){
                         </div>
                         <div className='baixo-2'>
                             <div>
-                                <div className='texto , font'>Observações</div>
-                                <textarea type="text" className='input-ob'value={observacao} onChange={ e => setObservacao(e.target.value)}/>
+                                <div className="texto , font">Observações</div>
+                                <textarea type="text" className='input-ob' value={observacao} onChange={ e => setObservacao(e.target.value)}/>
                             </div>
                             <img style={{"marginTop":"20px"}}width="310px" height="200px"src='/images/adicionar mesa.png'alt=''/> 
                         </div>

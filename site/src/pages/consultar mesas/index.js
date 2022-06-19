@@ -98,18 +98,23 @@ export default function Index(){
                                 <th>Nome</th>
                                 <th>Qtd Pessoas</th>
                                 <th>Data</th>
+                                <th>Observações</th>
                                 <th></th>    
                             </tr>
                         </thead>
                         <tbody className='corpo-tb'>
                             {reserva.map(item =>
-                                <tr key={item.ID} style={{backgroundColor: item.SITUACAO == 'Concluido' ? '#Acdf87' : 'white'}}>
+                                <tr key={item.ID} style={{backgroundColor: item.SITUACAO == 'Concluido' ? '#Acdf87' : ''}}>
                                     <td>{item.MESA}</td>
                                     <td>{item.NOME}</td>
                                     <td>{item.QTD_PESSOAS}</td>
                                     <td>
                                         {item.DIA.substr(0, 10)} <br />
                                         {item.DIA.substr(11, 5)}
+                                    </td>
+                                    <td>
+                                        {item.OBSERVACAO} <br/>
+                                        
                                     </td>
                                     <td>
                                         <img widht = "20px" height="20px" src="/images/images/Lapis-icon.png" className='lapislixos' alt="" onClick={() => editarReserva(item.ID)}></img> 
