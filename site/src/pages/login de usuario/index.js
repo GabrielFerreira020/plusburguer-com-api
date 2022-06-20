@@ -47,7 +47,7 @@ export default function Index(){
       
         <div className='login'>
             <main className="pagina-completa">
-            <LoadingBar color='#f11946' ref={ref}/>
+            <LoadingBar color='#F69D17' ref={ref}/>
                 
                 <section className="conteiner1">
                     <div className="subconteiner">

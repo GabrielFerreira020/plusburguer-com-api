@@ -3,8 +3,9 @@ import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
-import { adicionaReserva, listarTodas, buscarPorId, alterarReserva} from '../../api/reservaApi.js';
-import { toast } from 'react-toastify';
+import { adicionaReserva,  buscarPorId, alterarReserva} from '../../api/reservaApi.js';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'
 
 export default function Index(){
        
@@ -33,13 +34,14 @@ export default function Index(){
             setMesa(resposta.MESA);
             setCliente(resposta.NOME);
             setPessoas(resposta.QTD_PESSOAS);
-            setReservas(resposta.DIA.substr(0, 10));
+            setReservas(resposta.DIA.substr(0, 19));
             setObservacao(resposta.OBSERVACAO);
             setId(resposta.id)
       }
         
 
         async function finalizarClick() {
+            
             try{
                 if(id === 0 ){
                     const resposta = await adicionaReserva(mesa, cliente, pessoas, reservas, observacao);
@@ -48,20 +50,22 @@ export default function Index(){
                     toast.dark(' 🚀Reserva cadastrado com sucesso!');
                 }else
                 {
-                    await alterarReserva(id, mesa, cliente, pessoas, reservas, observacao);
-                    toast.dark ( ' 🚀 Reserva alterada com sucesso!!!!');
+                    const r = await alterarReserva(id, mesa, cliente, pessoas, reservas, observacao);
+                    toast.dark( '🚀 Reserva alterada com sucesso!');
                 }
                    
             }catch (err){
-                if(err.message)
+                console.log(err);
+                // if(err.message)
                 toast.error(err.response.data.erro)
-                else 
-                toast.error(err.message)
+                // else 
+                // toast.error(err.message)
             }
         }
         
     return(
         <div className='adicionar'>
+            <ToastContainer />
             <section className="fx-reserva">
                 <img className="logo" src="/logo-hamburguer.png" alt=""/>
                 
@@ -101,7 +105,10 @@ export default function Index(){
                         
                        
                         <div className="margin-botao">
-                            <Link to="/Consultar" className="botao , font" onClick={finalizarClick} >Finalizar</Link>
+                            <Link to="/consultar" className="font" >Voltar</Link>
+
+                            <button className="botao font" onClick={finalizarClick} >Finalizar</button>
+                            
                         </div>
                     </div>
                 </div>

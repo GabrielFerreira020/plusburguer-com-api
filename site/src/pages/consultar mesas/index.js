@@ -113,7 +113,7 @@ export default function Index(){
                                         {item.DIA.substr(11, 5)}
                                     </td>
                                     <td>
-                                        {item.OBSERVACAO} <br/>
+                                        {item.OBSERVACAO.substr(0, 8)}...<br/>
                                         
                                     </td>
                                     <td>
