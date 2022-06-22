@@ -23,6 +23,19 @@ server.put('/reserva/:id', async (req, resp) => {
         const { id } = req.params;
         const altreserva = req.body;
 
+        if (altreserva.mesa < 0)
+            throw new Error('Mesa inválida')
+
+        if (!altreserva.cliente.trim())
+            throw new Error('Nome obrigatório')
+
+        if (altreserva.pessoas < 0)
+        throw new Error('Quantidade inválida')
+
+        if (!altreserva.pessoas.trim())
+        throw new Error('Quantidade obrigatório')
+
+
         const resposta = await alterarReserva (id, altreserva);
         if (resposta != 1)
             throw new Error ('reserva não pode ser alterada');
